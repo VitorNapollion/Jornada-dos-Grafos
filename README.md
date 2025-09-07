@@ -31,3 +31,10 @@ Basta abrir o arquivo `index.html` em qualquer navegador (Google Chrome, Firefox
 
 - **Vitor Manoel Napoleão dos Santos**
 - [GitHub](https://github.com/VitorNapollion)
+
+---
+## 📝 Licença
+
+Este projeto está sob uma **licença proprietária**. Para mais detalhes sobre as condições de uso, consulte o arquivo [LICENSE](LICENSE).
+
+Todos os direitos reservados a Vitor Manoel Napoleão dos Santos.
