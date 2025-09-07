@@ -1,0 +1,1081 @@
+/* Fundo bege com textura */
+body.home-bg {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFEFCB url('imagens/fundo.png') repeat;
+    background-size: cover;
+}
+
+/* Container */
+.container.home {
+    text-align: center;
+    width: 90vw;
+    max-width: 500px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+/* Botões superiores fixos nos cantos */
+.btn-top {
+    position: fixed; /* 🔹 fixo na tela, não no container */
+    top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+    white-space: nowrap;
+    z-index: 1000; /* Sempre por cima */
+}
+
+.btn-top:hover {
+    transform: scale(1.05);
+}
+
+.btn-top.green {
+    background: #4CAF50;
+    color: white;
+    left: 20px; /* canto superior esquerdo */
+}
+
+.btn-top.red {
+    background: #E74C3C;
+    color: white;
+    right: 20px; /* canto superior direito */
+}
+
+/* Título */
+.title {
+    font-size: 8vw;
+    font-weight: bold;
+    color: #003366;
+    margin: 10vh 0 5vh;
+    line-height: 1.2;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Botão Iniciar */
+.btn-start {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 3vw 6vw;
+    border-radius: 12px;
+    font-size: 3.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-start:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Personagens */
+.characters {
+    width: 70vw;
+    max-width: 350px;
+    margin-top: 5vh;
+    filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.5)); /* 🔹 sombra forte para destacar */
+    transition: transform 0.3s;
+}
+
+.characters:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .btn-top {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .btn-start {
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+    .characters {
+        width: 80vw;
+        max-width: 280px;
+    }
+}
+
+@media (min-width: 601px) {
+    .title {
+        font-size: 40px;
+    }
+    .btn-start {
+        font-size: 20px;
+        padding: 18px 30px;
+    }
+    .characters {
+        width: 500px;
+        max-width: 400px; /* 🔹 destaque maior em telas grandes */
+    }
+}
+
+/* Estilo do pop-up (modal) para o botão "Sobre" */
+.modal {
+  display: none; /* Esconde o pop-up por padrão */
+  position: fixed;
+  z-index: 1001; /* 🔹 Z-index alto para ficar por cima de tudo, inclusive outros elementos fixos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* Fundo escurecido e semi-transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: slideIn 0.5s ease-out; /* 🔹 Animação de entrada */
+}
+
+.modal-content h2 {
+  font-size: 2em;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.modal a:hover {
+  color: #0056b3;
+}
+
+/* 🔹 Animação de entrada do modal */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para a tela de Níveis */
+body.niveis-bg {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #EFEFEF; /* Cor de fundo cinza clara */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha no topo */
+    position: relative;
+}
+
+.container.niveis {
+    position: relative;
+    width: 90vw;
+    max-width: 500px; /* Largura máxima para a área central */
+    padding-top: 5vh;
+}
+
+/* Botão de Voltar */
+.back-button {
+    position: fixed;   /* antes estava absolute */
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
+    text-decoration: none;
+    z-index: 1000; /* garante que fique por cima */
+}
+
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+.back-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Título */
+.title-niveis {
+    font-size: 36px;
+    font-weight: bold;
+    color: #003366;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Lista de Cards */
+.level-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os cards */
+    width: 100%;
+    
+}
+
+/* Estilo do Card individual */
+.level-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFD700;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+}
+
+.level-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.level-info {
+    flex-grow: 1;
+}
+
+.level-number {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #003366;
+}
+
+.level-description {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.next-arrow {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+}
+
+/* Estilos para a tela de Nível 1 */
+body.nivel-bg {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Botão de Voltar - Posicionado no topo esquerdo */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+.back-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Título - Posicionado no topo e centralizado */
+.nivel-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #003366;
+    text-align: center;
+    margin-top: 50px; /* Margem do topo para o título */
+}
+
+.container.nivel-content {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 85vw;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+
+.nivel-text {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.nivel-illustration {
+    max-width: 70%;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.nivel-illustration img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.next-button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.next-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para a tela de Conteúdo 1 */
+body.nivel-conteudo-bg {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.conteudo-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #003366;
+    text-align: center;
+    margin-top: 50px; /* Margem do topo para o título */
+}
+
+.container.conteudo {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 85vw;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.conteudo-text {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Estilos para a animação interativa */
+.grafo-interativo {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertice {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    border: 2px solid #0056b3;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* acima das linhas */
+}
+
+.vertice:hover {
+    transform: scale(1.2);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.vertice.highlighted {
+    background-color: #FFD700;
+    border: 2px solid #ccad00;
+    transform: scale(1.3);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.aresta {
+    position: absolute;
+    background-color: #333;
+    height: 3px;
+    transform-origin: 0 0;
+    z-index: 1; /* ficam no fundo */
+}
+
+/* Posicionamento dos vértices */
+#vertice1 { top: 30px; left: 30px; }
+#vertice2 { top: 120px; left: 120px; }
+#vertice3 { top: 30px; right: 30px; }
+
+/* Legenda "sou um ponto" */
+.label {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 3; /* sempre por cima de tudo */
+}
+
+.vertice.highlighted .label {
+    opacity: 1;
+}
+
+/* Estilos para a ilustração e navegação no conteúdo */
+.illustration-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.interacao-legenda {
+    font-size: 24px;
+    color: #FF6600;
+    text-align: center;
+    margin-top: 30px; /* Adiciona espaço acima da legenda */
+    margin-bottom: 20px; /* Adiciona espaço abaixo da legenda */
+    font-weight: bold; /* Deixa o texto em negrito para destacar */
+}
+
+.conteudo-illustration {
+    max-width: 50%;
+}
+
+.conteudo-illustration img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.illustration-navigation .next-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.illustration-navigation .next-button:hover {
+    transform: scale(1.1);
+}
+
+.illustration-navigation .next-button img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para a tela de Conteúdo 2: Cards */
+.conteudo2-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.card-interativo {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-interativo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-interativo h3 {
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.card-interativo p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* Estilos do Modal */
+.modal-ilustracao {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-conteudo {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fechar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+#ilustracao-modal {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos gerais para o conteúdo do nível 3*/
+.nivel-conteudo-bg {
+    background-color: #f0f8ff; /* Fundo azul claro e suave, como o céu */
+}
+
+/* Título e texto */
+.conteudo-title {
+    color: #4B0082; /* Roxo escuro para destaque */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Sombra suave para profundidade */
+}
+
+.conteudo-text {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+}
+
+/* Texto explicativo - Agora posicionado abaixo do texto principal */
+.explicacao-texto {
+    /* Posição relativa para fluir com o documento */
+    text-align: center;
+    margin: 20px auto 0; /* Margem para espaçamento */
+    font-family: 'Comic Sans MS', cursive; /* Fonte divertida */
+    font-size: 22px; /* Aumenta o tamanho */
+    color: #4B0082;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Área do infográfico - Cor de fundo e borda mais amigáveis */
+.infografico-animado {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px; /* Aumenta a altura para ter mais espaço */
+    margin: 40px auto;
+    background-color: #fff9c4; /* Fundo amarelado suave, cor de areia ou Sol */
+    border: 3px dashed #FFD700; /* Borda pontilhada amarela, divertida! */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Animação dos nós - Transforma círculos em personagens */
+.node {
+    position: absolute;
+    width: 60px; /* Aumenta o tamanho */
+    height: 60px;
+    background-color: transparent; /* Remove o fundo para usar apenas a imagem/emoji */
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer; /* Para interação futura */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efeito de "pulo" */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para destacar */
+    /* Estilos para o texto/emoji dentro do nó */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px; /* Tamanho do emoji */
+    transform: scale(0); /* Começa bem pequeno para o efeito de "pop" */
+}
+
+/* Cores e Emojis para cada nó */
+#node1 { top: 100px; left: 100px; background-color: #FF6B6B; } /* Cor de maçã */
+#node1::after { content: "🍎"; }
+
+#node2 { top: 200px; left: 200px; background-color: #6A5ACD; } /* Cor de uva */
+#node2::after { content: "🍇"; }
+
+#node3 { top: 100px; left: 300px; background-color: #3CB371; } /* Cor de folha */
+#node3::after { content: "🍀"; }
+
+#node4 { top: 200px; left: 400px; background-color: #FFC0CB; } /* Cor de coração */
+#node4::after { content: "💖"; }
+
+/* Animação das arestas - Deixa a linha com mais vida */
+.edge {
+    position: absolute;
+    height: 4px; /* Linha mais grossa e visível */
+    background-color: #FF4500; /* Laranja vibrante */
+    width: 0;
+    transform-origin: left;
+    transition: width 1s ease-in-out, transform 1s ease-in-out;
+    opacity: 0;
+}
+
+/* Efeito de brilho na aresta quando ativa */
+.edge.active {
+    opacity: 1;
+    box-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500; /* Efeito de brilho */
+}
+
+/* Estilo do botão de animação */
+#iniciar-animacao {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 25px; /* Aumenta o tamanho do botão */
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4CAF50; /* Verde vivo */
+    color: white;
+    border: 3px solid #388E3C; /* Borda mais grossa e escura */
+    border-radius: 50px; /* Botão arredondado, como um balão */
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+#iniciar-animacao:hover {
+    background-color: #45a049;
+    transform: translateX(-50%) scale(1.05); /* Efeito de "crescer" ao passar o mouse */
+}
+
+/* Classe de ativação para as animações */
+.node.active {
+    opacity: 1;
+    transform: scale(1); /* Volta ao tamanho normal, criando o efeito de "pop" */
+}
+
+/* Estilos para o conteúdo da tela de tipos de grafos */
+.conteudo4-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 80px; /* Adiciona espaço para o botão de próximo */
+}
+
+/* Estilo do contêiner do vídeo para centralizar e dar responsividade */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o contêiner do quiz */
+.quiz-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffe0; /* Amarelo claro */
+    border: 3px dashed #ffd700;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pergunta-quiz {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4B0082;
+    margin-bottom: 20px;
+}
+
+.opcoes-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcao {
+    padding: 15px;
+    background-color: #90ee90; /* Verde pastel */
+    border: 2px solid #3CB371;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.opcao:hover {
+    background-color: #76c776;
+    transform: scale(1.02);
+}
+
+/* Estilos de feedback */
+.feedback-quiz {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.feedback-quiz.correto {
+    color: #388E3C; /* Verde escuro */
+}
+
+.feedback-quiz.incorreto {
+    color: #D32F2F; /* Vermelho escuro */
+}
+
+/* Estilos para o botão de seguir (já existente) */
+.next-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    transition: transform 0.3s;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para a tela do quiz */
+.quiz-geral-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 80px;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffe0; /* Amarelo claro */
+    border: 3px dashed #ffd700;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pergunta-quiz {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4B0082;
+    margin-bottom: 20px;
+}
+
+.opcoes-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcao {
+    padding: 15px;
+    background-color: #90ee90; /* Verde pastel */
+    border: 2px solid #3CB371;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.opcao:hover {
+    background-color: #76c776;
+    transform: scale(1.02);
+}
+
+/* Estilos de feedback */
+.feedback-quiz {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 30px; /* Para manter o layout estável */
+}
+
+.feedback-quiz.correto {
+    color: #388E3C; /* Verde escuro */
+}
+
+.feedback-quiz.incorreto {
+    color: #D32F2F; /* Vermelho escuro */
+}
+
+/* Estilo para a opção correta */
+.opcao.correta-destaque {
+    background-color: #8BC34A !important;
+    border-color: #388E3C;
+    animation: pulse 1s infinite;
+}
+
+/* Animação para destacar a resposta correta */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para o botão de seguir */
+.next-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    transition: transform 0.3s;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para a tela de parabéns */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.nivel-parabens-bg {
+    background-color: #000a29; /* Fundo azul escuro em toda a página */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Remove qualquer fundo branco herdado */
+.container,
+.conteudo,
+.tela-parabens {
+    background-color: transparent !important; /* 🔹 remove o quadrado branco */
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Título */
+.parabens-title {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #ddd9e0; /* Roxo mais visível no fundo escuro */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Subtítulo medalha */
+.parabens-medalha {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Imagem central */
+.parabens-imagem {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+/* Textos */
+.parabens-mensagem,
+.parabens-text {
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.parabens-text {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Botões de navegação */
+.botoes-navegacao-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.btn-navegacao {
+    width: 60px;
+    height: 60px;
+    background-color: #01153B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-navegacao:hover {
+    transform: scale(1.1);
+    background-color: #022055;
+}
+
+.btn-navegacao img {
+    width: 30px;
+}
+

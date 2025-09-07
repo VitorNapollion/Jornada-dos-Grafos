@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível 2 - Grau de um Vértice</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../nivel2.css">
+</head>
+<body class="nivel-conteudo-bg">
+
+    <a href="nivel2-conteudo1.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+
+    <h1 class="conteudo-title">Grau de um Vértice</h1>
+
+    <div class="container conteudo">
+        <p class="conteudo-text">
+            O grau de um vértice é quantas arestas tocam nele. É uma medida simples de ‘quantas conexões’ ele tem.
+        </p>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TW4OI2LNLUk"
+                title="Vídeo: Grau de um Vértice" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="conteudo-nivel2-video">
+            <div class="grau-pratica">
+                <h3>Vamos praticar?</h3>
+                <p>Clique nos vizinhos do Vértice A para somar seu grau.</p>
+
+                <svg class="grafo-pratica" viewBox="0 0 200 200">
+                    <line id="edgeAB" class="aresta hidden" x1="100" y1="100" x2="50" y2="60"></line>
+                    <line id="edgeAC" class="aresta hidden" x1="100" y1="100" x2="150" y2="60"></line>
+                    <line id="edgeAD" class="aresta hidden" x1="100" y1="100" x2="100" y2="150"></line>
+
+                    <g id="nodeA" class="vertice-group">
+                        <circle class="vertice central" cx="100" cy="100" r="15"></circle>
+                        <text x="100" y="105" text-anchor="middle" dominant-baseline="middle" class="rotulo">A</text>
+                    </g>
+
+                    <g id="nodeB" class="vertice-group vizinho">
+                        <circle class="vertice" cx="50" cy="60" r="15"></circle>
+                        <text x="50" y="65" text-anchor="middle" dominant-baseline="middle" class="rotulo">B</text>
+                    </g>
+
+                    <g id="nodeC" class="vertice-group vizinho">
+                        <circle class="vertice" cx="150" cy="60" r="15"></circle>
+                        <text x="150" y="65" text-anchor="middle" dominant-baseline="middle" class="rotulo">C</text>
+                    </g>
+
+                    <g id="nodeD" class="vertice-group vizinho">
+                        <circle class="vertice" cx="100" cy="150" r="15"></circle>
+                        <text x="100" y="155" text-anchor="middle" dominant-baseline="middle" class="rotulo">D</text>
+                    </g>
+                </svg>
+
+                <p id="contador">Grau do Vértice A: <span id="grauA">0</span></p>
+                <p id="mensagem" class="hidden">🎉 Parabéns! Você encontrou todos os vizinhos de A!</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="nivel2-conteudo3.html" id="btnProximo" class="next-button hidden" aria-label="Próximo Conteúdo">
+        <img src="../imagens/seta-seguir.png" alt="Próximo Conteúdo">
+    </a>
+    
+    <script src="../nivel2.js"></script>
+</body>
+</html>

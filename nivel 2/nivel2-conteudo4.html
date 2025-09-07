@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível 2 - Peso ≠ Grau</title>
+    
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../nivel2.css">
+</head>
+<body class="nivel-conteudo-bg">
+
+    <a href="nivel2-conteudo3.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+
+    <h1 class="conteudo-title">Peso ≠ Grau</h1>
+
+    <div class="container conteudo">
+        <p class="conteudo-text explicativo-peso">
+            “Pesos não contam para o grau; grau conta quantas conexões, não quão fortes.”
+        </p>
+
+        <div class="quadro-comparativo">
+            <svg id="grafo-peso" viewBox="0 0 400 200">
+                <line x1="100" y1="100" x2="300" y2="50" class="aresta-peso" />
+                <text x="200" y="70" class="label-peso">5</text>
+
+                <line x1="100" y1="100" x2="300" y2="150" class="aresta-peso" />
+                <text x="200" y="130" class="label-peso">1</text>
+                
+                <circle id="verticeA" cx="100" cy="100" r="20" class="vertice-peso" />
+                <text x="100" y="105" text-anchor="middle" class="label-vertice-peso">A</text>
+
+                <circle id="verticeB" cx="300" cy="50" r="20" class="vertice-peso" />
+                <text x="300" y="55" text-anchor="middle" class="label-vertice-peso">B</text>
+
+                <circle id="verticeC" cx="300" cy="150" r="20" class="vertice-peso" />
+                <text x="300" y="155" text-anchor="middle" class="label-vertice-peso">C</text>
+            </svg>
+        </div>
+
+        <div class="pergunta-rapida">
+            <p>Se A tem 2 arestas com pesos 5 e 1, qual é o grau(A)?</p>
+            <input type="number" id="resposta-grau" placeholder="Digite sua resposta">
+            <button id="checar-resposta">Checar</button>
+            <p id="feedback-grau"></p>
+        </div>
+    </div>
+
+    <a href="nivel2-conteudo5.html" class="next-button" style="display: none;">
+        <img src="../imagens/seta-seguir.png" alt="Próximo Conteúdo">
+    </a>
+
+    <script src="../nivel2.js"></script>
+</body>
+</html>

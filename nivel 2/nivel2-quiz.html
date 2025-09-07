@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Nível 2</title>
+    
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../nivel2.css"> 
+</head>
+<body class="nivel-quiz-bg">
+    <a href="nivel2-conteudo5.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+    <h1 class="quiz-title">Quiz – Nível 2</h1>
+
+    <div class="container quiz-container">
+        <div class="question-block" data-question="1" data-correct="b">
+            <p class="question-text">Um vértice pode representar:</p>
+            <div class="options-container">
+                <label><input type="radio" name="q1" value="a"> Uma linha</label>
+                <label><input type="radio" name="q1" value="b"> Uma cidade</label>
+                <label><input type="radio" name="q1" value="c"> Um número</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="2" data-correct="c">
+            <p class="question-text">O que representa uma aresta?</p>
+            <div class="options-container">
+                <label><input type="radio" name="q2" value="a"> Um peso</label>
+                <label><input type="radio" name="q2" value="b"> Um ponto</label>
+                <label><input type="radio" name="q2" value="c"> Uma ligação entre vértices</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="3" data-correct="c">
+            <p class="question-text">Se um vértice está ligado a 4 outros, seu grau é:</p>
+            <div class="options-container">
+                <label><input type="radio" name="q3" value="a"> 2</label>
+                <label><input type="radio" name="q3" value="b"> 1</label>
+                <label><input type="radio" name="q3" value="c"> 4</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="4" data-correct="b" data-feedback-correct="Perfeito! Grau é o número de arestas incidentes.">
+            <p class="question-text">Num grafo sem direção, o vértice X está ligado a A, B e C. O grau(X) é:</p>
+            <div class="question-image-container">
+                <img src="../imagens/quiz-4.png" alt="Grafo com vértice X ligado a A, B e C" class="quiz-image">
+            </div>
+            <div class="options-container">
+                <label><input type="radio" name="q4" value="a"> 2</label>
+                <label><input type="radio" name="q4" value="b"> 3</label>
+                <label><input type="radio" name="q4" value="c"> 4</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="5" data-correct="b">
+            <p class="question-text">Em um grafo dirigido, chegam 2 setas em Y e saem 3 setas de Y. Marque correto:</p>
+            <div class="question-image-container">
+                <img src="../imagens/quiz-5.png" alt="Grafo dirigido com setas em Y" class="quiz-image">
+            </div>
+            <div class="options-container">
+                <label><input type="radio" name="q5" value="a"> in=3, out=2</label>
+                <label><input type="radio" name="q5" value="b"> in=2, out=3</label>
+                <label><input type="radio" name="q5" value="c"> in=5, out=0</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="6" data-correct="b" data-feedback-correct="Pesos não somam no grau; contam-se arestas.">
+            <p class="question-text">Uma aresta tem peso 10 e outra peso 1; ambas ligam ao vértice Z. O grau(Z) é:</p>
+            <div class="question-image-container">
+                <img src="../imagens/quiz-6.png" alt="Grafo com vértice Z e arestas com pesos" class="quiz-image">
+            </div>
+            <div class="options-container">
+                <label><input type="radio" name="q6" value="a"> 10</label>
+                <label><input type="radio" name="q6" value="b"> 2</label>
+                <label><input type="radio" name="q6" value="c"> 11</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="7" data-correct="a" data-feedback-correct="Folha tem grau 1; isolado tem 0.">
+            <p class="question-text">Um vértice com 0 conexões é chamado de:</p>
+            <div class="options-container">
+                <label><input type="radio" name="q7" value="a"> Isolado</label>
+                <label><input type="radio" name="q7" value="b"> Folha</label>
+                <label><input type="radio" name="q7" value="c"> Central</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+        
+    </div>
+    
+    <a href="nivel2-parabens.html" class="next-button hidden">
+        <img src="../imagens/seta-seguir.png" alt="Próximo Conteúdo">
+    </a>
+
+    <script src="../nivel2.js"></script>
+</body>
+</html>

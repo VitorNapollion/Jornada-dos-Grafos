@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível 3 — Armadilhas Comuns</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../nivel3.css">
+</head>
+<body class="nivel-conteudo-bg">
+
+    <a href="nivel3-conteudo3.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+
+    <h1 class="conteudo-title">Armadilhas comuns</h1>
+
+    <div class="container conteudo">
+        <div class="armadilha-box">
+            <h4>“Menos arestas” não garante menor distância/tempo.</h4>
+            <div class="imagem-container">
+                <img src="../imagens/armadilha-1.png" alt="Exemplo de caminho com menos arestas, mas mais longo" class="armadilha-img">
+            </div>
+            <p>O número de passos nem sempre é o melhor critério. Um caminho com menos arestas pode ter um custo total maior.</p>
+        </div>
+
+        <div class="armadilha-box">
+            <h4>Peso é o que conta para custo.</h4>
+            <div class="imagem-container">
+                <img src="../imagens/armadilha-2.png" alt="Exemplo de arestas com pesos" class="armadilha-img">
+            </div>
+            <p>Para o caminho mínimo, o que importa são os valores nas arestas (pesos). O grau do vértice não entra nessa conta!</p>
+        </div>
+
+        <div class="armadilha-box">
+            <h4>Duas rotas podem empatar.</h4>
+            <div class="imagem-container">
+                <img src="../imagens/armadilha-3.png" alt="Exemplo de dois caminhos com o mesmo custo" class="armadilha-img">
+            </div>
+            <p>Se dois caminhos têm o mesmo custo, eles são igualmente "mínimos". Nesses casos, outros critérios podem ser usados para desempatar (por exemplo, segurança ou tempo).</p>
+        </div>
+        
+        <div class="armadilha-box">
+            <h4>Evite voltas desnecessárias (ciclos).</h4>
+            <div class="imagem-container">
+                <img src="../imagens/armadilha-4.png" alt="Exemplo de um ciclo que deve ser evitado" class="armadilha-img">
+            </div>
+            <p>Ao procurar o caminho mais curto, evite rotas que fazem você passar pelo mesmo ponto mais de uma vez. Isso só aumenta o custo.</p>
+        </div>
+    </div>
+
+    <a href="nivel3-conteudo5.html" class="next-button">
+        <img src="../imagens/seta-seguir.png" alt="Próximo Conteúdo">
+    </a>
+    
+    <script src="../nivel3.js"></script>
+</body>
+</html>

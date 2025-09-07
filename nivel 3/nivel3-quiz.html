@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Nível 3</title>
+    
+    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../nivel3.css"> 
+</head>
+<body class="nivel-quiz-bg">
+
+    <a href="nivel3-conteudo5.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+
+    <h1 class="quiz-title">Quiz – Nível 3</h1>
+
+    <div class="container quiz-container">
+        <div class="question-block" data-question="1" data-correct="b">
+            <p class="question-text">O que é um caminho em um grafo?</p>
+            <div class="options-container">
+                <label><input type="radio" name="q1" value="a"> Um ponto</label>
+                <label><input type="radio" name="q1" value="b"> Uma sequência de vértices conectados</label>
+                <label><input type="radio" name="q1" value="c"> Um número de vértices</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="2" data-correct="b">
+            <p class="question-text">O que representa um caminho mínimo?</p>
+            <div class="options-container">
+                <label><input type="radio" name="q2" value="a"> O caminho mais bonito</label>
+                <label><input type="radio" name="q2" value="b"> O caminho com menor custo segundo um critério</label>
+                <label><input type="radio" name="q2" value="c"> O caminho com mais vértices</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="question-block hidden" data-question="3" data-correct="b">
+            <p class="question-text">Se o objetivo é tempo, devo somar:</p>
+            <div class="options-container">
+                <label><input type="radio" name="q3" value="a"> As arestas em km</label>
+                <label><input type="radio" name="q3" value="b"> Os minutos nas arestas</label>
+                <label><input type="radio" name="q3" value="c"> Apenas contar passos</label>
+            </div>
+            <p class="feedback"></p>
+        </div>
+
+        <div class="quiz-end-screen hidden">
+            <a href="nivel3-parabens.html" class="next-level-button">Ir para a tela de parabéns</a>
+        </div>
+    </div>
+    
+    <script src="../nivel3.js"></script>
+</body>
+</html>

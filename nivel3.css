@@ -1,0 +1,370 @@
+/* Estilos específicos para a tela de introdução do Nível 3 */
+.conteudo-nivel3-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.conteudo-imagem-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 3px solid #6c757d;
+    border-radius: 15px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-imagem-ilustrativa {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* Estilos para a tela de Caminho Mínimo (nivel3-conteudo2) */
+.conteudo-caminho-minimo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.quadro-comparativo {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.aresta-peso {
+    stroke: #6c757d;
+    stroke-width: 2;
+}
+
+.label-peso {
+    font-size: 16px;
+    font-weight: bold;
+    fill: #dc3545;
+}
+
+.vertice-peso {
+    fill: #007bff;
+    stroke: #0056b3;
+    stroke-width: 2;
+}
+
+.label-vertice-peso {
+    font-size: 14px;
+    font-weight: bold;
+    fill: #fff;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+/* Estilos para o Callout Box */
+.callout-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 2px solid #6a1b9a;
+    border-radius: 10px;
+    max-width: 600px;
+    text-align: center;
+    font-weight: bold;
+    color: #4a148c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a tela de Critérios Diferentes (nivel3-conteudo3) */
+.conteudo-criterios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.tabela-criterios {
+    display: flex; /* Mantém flexbox */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    justify-content: center; /* Centraliza os itens */
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; /* Garante que não estique demais em telas muito grandes */
+    margin-top: 20px;
+}
+
+/* Estilo para os quadradinhos individuais */
+.criterio-item {
+    background-color: #e0f2f7;
+    border: 2px solid #b3e5fc;
+    border-radius: 10px;
+    padding: 20px 15px; /* Ajustado padding: vertical 20px, horizontal 15px */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Importante: Define a largura de cada item para que caibam 3 por linha */
+    /* Calcula 1/3 da largura total menos o gap entre eles */
+    flex: 1 1 calc(33.33% - 20px); 
+    min-width: 200px; /* Garante que não fiquem muito estreitos */
+    max-width: 280px; /* Impede que fiquem grandes demais em poucas colunas */
+}
+
+.criterio-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.criterio-icon {
+    width: 45px; /* Tamanho do ícone ajustado */
+    height: 45px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.criterio-item h3 {
+    margin: 0;
+    line-height: 1.2; /* Aumentado um pouco para melhor leitura */
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.criterio-item p {
+    color: #333;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.mensagem-final {
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Estilos para a tela de armadilhas comuns (nivel3-conteudo4) */
+.armadilha-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffebee; /* Fundo rosa claro */
+    border: 2px solid #ef5350; /* Borda vermelha */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.armadilha-box h4 {
+    font-size: 1.4em;
+    color: #c62828;
+    margin-bottom: 15px;
+}
+
+.armadilha-box p {
+    font-size: 1em;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.imagem-container {
+    margin: 20px auto;
+    max-width: 300px;
+}
+
+.armadilha-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a tela do Conteúdo 5 (Vídeo e explicação) */
+.video-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    height: auto;
+}
+
+.conteudo-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.conteudo-text li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+/* Estilos para o Quiz do Nível 3 */
+
+.nivel-quiz-bg {
+    background-color: #e0f2f7;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.quiz-title {
+    font-size: 2.5em;
+    color: #6a1b9a;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px dashed #ffc107; 
+}
+
+.question-block {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* ADICIONADO: Altura mínima para o bloco inteiro para evitar o "esticada" */
+    min-height: 250px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém o conteúdo espaçado */
+}
+
+.question-block.hidden {
+    display: none;
+}
+
+.question-text {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.options-container label {
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #e9f5e9;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.options-container label:hover {
+    background-color: #d4edd4;
+}
+
+.options-container input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    min-height: 50px;
+    visibility: hidden;
+    transition: visibility 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback.correct {
+    color: #28a745;
+    visibility: visible;
+}
+
+.feedback.incorrect {
+    color: #dc3545;
+    visibility: visible;
+}
+
+.quiz-end-screen {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #6a1b9a;
+    padding: 40px;
+    background-color: #e0f7fa;
+    border-radius: 15px;
+}
+
+.quiz-end-screen.hidden {
+    display: none;
+}
+
+.next-level-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00bcd4;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.next-level-button:hover {
+    background-color: #00acc1;
+}
+
+.question-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quiz-image {
+    max-width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+}

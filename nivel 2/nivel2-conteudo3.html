@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nível 2 - Grau em grafos dirigidos</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../nivel2.css">
+</head>
+<body class="nivel-conteudo-bg">
+
+    <a href="nivel2-conteudo2.html" class="back-button">
+        <img src="../imagens/seta-voltar.png" alt="Voltar para a tela anterior">
+    </a>
+
+    <h1 class="conteudo-title">Grau em grafos dirigidos</h1>
+    
+    <div class="container conteudo">
+        <p class="texto-principal">
+            <strong>Em grafo dirigido (com setas):</strong>
+        </p>
+        <ul class="lista-grau">
+            <li><strong>Grau de entrada (in-degree)</strong> = número de setas chegando ao vértice.</li>
+            <li><strong>Grau de saída (out-degree)</strong> = número de setas saindo do vértice.</li>
+        </ul>
+        </p>
+        <p class="texto-principal explicativo">
+            Em grafos com setas, contamos o que entra (in-degree) e o que sai (out-degree).
+        </p>
+
+        <div class="grafo-dirigido-interativo">
+            <svg id="grafo-dirigido" viewBox="0 0 400 400">
+                <defs>
+                    <marker id="arrowhead-in" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#28a745" />
+                    </marker>
+                    <marker id="arrowhead-out" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545" />
+                    </marker>
+                </defs>
+
+                <line x1="100" y1="100" x2="300" y2="100" class="aresta-dirigida" id="edgeAB" data-origem="A" data-destino="B" marker-end="url(#arrowhead-out)"/>
+                <line x1="300" y1="100" x2="100" y2="300" class="aresta-dirigida" id="edgeBC" data-origem="B" data-destino="C" marker-end="url(#arrowhead-out)"/>
+                <line x1="100" y1="300" x2="100" y2="100" class="aresta-dirigida" id="edgeCA" data-origem="C" data-destino="A" marker-end="url(#arrowhead-out)"/>
+                <line x1="100" y1="300" x2="300" y2="300" class="aresta-dirigida" id="edgeCD" data-origem="C" data-destino="D" marker-end="url(#arrowhead-out)"/>
+                <line x1="300" y1="300" x2="300" y2="100" class="aresta-dirigida" id="edgeDB" data-origem="D" data-destino="B" marker-end="url(#arrowhead-out)"/>
+
+
+                <circle id="verticeA" cx="100" cy="100" r="20" class="vertice-dirigido" data-label="A"/>
+                <text x="100" y="105" text-anchor="middle" class="label-dirigido">A</text>
+
+                <circle id="verticeB" cx="300" cy="100" r="20" class="vertice-dirigido" data-label="B"/>
+                <text x="300" y="105" text-anchor="middle" class="label-dirigido">B</text>
+
+                <circle id="verticeC" cx="100" cy="300" r="20" class="vertice-dirigido" data-label="C"/>
+                <text x="100" y="305" text-anchor="middle" class="label-dirigido">C</text>
+                
+                <circle id="verticeD" cx="300" cy="300" r="20" class="vertice-dirigido" data-label="D"/>
+                <text x="300" y="305" text-anchor="middle" class="label-dirigido">D</text>
+            </svg>
+        </div>
+        
+        <div class="legenda-grau-dirigido" id="legenda-grau-dirigido" style="display: none;">
+            <p><strong>Grau de Entrada:</strong> <span class="grau-in"></span></p>
+            <p><strong>Grau de Saída:</strong> <span class="grau-out"></span></p>
+            <div class="explicacao-legenda">
+                <div class="item-legenda"><span class="cor-in"></span> Entrada</div>
+                <div class="item-legenda"><span class="cor-out"></span> Saída</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="nivel2-conteudo4.html" class="next-button" style="display: none;">
+        <img src="../imagens/seta-seguir.png" alt="Próximo Conteúdo">
+    </a>
+
+    <script src="../nivel2.js"></script>
+</body>
+</html>
