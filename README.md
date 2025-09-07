@@ -2,6 +2,8 @@
 
 Uma aventura educacional para aprender sobre grafos de forma divertida e interativa.
 
+[**Acesse o site aqui**](https://VitorNapollion.github.io/Jornada-dos-Grafos/)
+
 <p align="center">
   <img src="https://github.com/VitorNapollion/Jornada-dos-Grafos/blob/main/imagens/TELA%20INICIAL.png?raw=true" alt="Tela inicial do projeto">
 </p>
