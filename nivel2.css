@@ -695,3 +695,40 @@ button:hover {
 .texto-principal li {
     margin-bottom: 10px;
 }
+
+/* Ajustes de responsividade para o Nível 2 */
+@media (max-width: 768px) {
+    .grafo-interativo-revisao {
+        width: 90vw;   /* ocupa 90% da tela */
+        height: 90vw;  /* mantém quadrado */
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .quiz-title {
+        font-size: 6vw; /* ajusta o título do quiz */
+    }
+
+    .question-text {
+        font-size: 1.1em; /* reduz a fonte das perguntas */
+    }
+
+    .quiz-container {
+        padding: 15px;
+    }
+
+    .texto-principal {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-title {
+        font-size: 5.5vw;
+    }
+
+    .question-text {
+        font-size: 1em;
+    }
+}

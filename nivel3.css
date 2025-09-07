@@ -368,3 +368,42 @@
     padding: 5px;
     background-color: #fff;
 }
+
+/* Ajustes de responsividade para o Nível 3 */
+@media (max-width: 768px) {
+    .quadro-comparativo {
+        height: auto;   /* deixa a altura se ajustar ao conteúdo */
+        min-height: 200px;
+    }
+
+    .quiz-title {
+        font-size: 6vw; /* adapta ao tamanho da tela */
+    }
+
+    .question-text {
+        font-size: 1.1em;
+    }
+
+    .quiz-container {
+        padding: 15px;
+    }
+
+    .criterio-item {
+        flex: 1 1 100%; /* cada item ocupa linha inteira */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-title {
+        font-size: 5.5vw;
+    }
+
+    .question-text {
+        font-size: 1em;
+    }
+
+    .quiz-image {
+        max-width: 120px; /* reduz imagens no quiz */
+    }
+}
