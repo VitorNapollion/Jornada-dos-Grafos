@@ -61,11 +61,15 @@ body.home-bg {
     font-size: 8vw;
     font-weight: bold;
     color: #003366;
-    margin: 10vh 0 5vh;
     line-height: 1.2;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-
-    
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 }
 
 /* Botão Iniciar */
@@ -79,26 +83,34 @@ body.home-bg {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
     transition: background 0.3s, transform 0.2s;
+    position: fixed;
+    top: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 }
 
 .btn-start:hover {
     background: #0056b3;
-    transform: scale(1.05);
+    transform: translateX(-50%) scale(1.05);
 }
 
 /* Personagens */
 .characters {
     width: 70vw;
     max-width: 350px;
-    margin-top: 5vh;
     filter: drop-shadow(0px 4px 12px rgba(0,0,0,0.5)); /* 🔹 sombra forte para destacar */
     transition: transform 0.3s;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
 }
 
 .characters:hover {
-    transform: scale(1.05);
+    transform: translateX(-50%) scale(1.05);
 }
 
 /* Responsividade */
@@ -232,8 +244,8 @@ body.niveis-bg {
 
 /* Botão de voltar */
 .back-button {
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  bottom: 20px;
   left: 20px;
   width: 60px;
   height: 60px;
@@ -326,10 +338,10 @@ body.nivel-bg {
     position: relative;
 }
 
-/* Botão de Voltar - Posicionado no topo esquerdo */
+/* Botão de Voltar - Posicionado na parte inferior esquerda */
 .back-button {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    bottom: 20px;
     left: 20px;
     width: 60px;
     height: 60px;
@@ -392,10 +404,9 @@ body.nivel-bg {
 }
 
 .next-button {
-    position: absolute;
+    position: fixed;
+    bottom: 20px;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     width: 60px;
     height: 60px;
     display: flex;
@@ -407,7 +418,7 @@ body.nivel-bg {
 }
 
 .next-button:hover {
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
 }
 
 .next-button img {
@@ -696,21 +707,22 @@ body.nivel-conteudo-bg {
 .infografico-animado {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    height: 350px; /* Aumenta a altura para ter mais espaço */
+    max-width: 500px;
+    height: 300px; /* Reduz a altura para melhor proporção */
     margin: 40px auto;
     background-color: #fff9c4; /* Fundo amarelado suave, cor de areia ou Sol */
     border: 3px dashed #FFD700; /* Borda pontilhada amarela, divertida! */
     border-radius: 15px; /* Cantos arredondados */
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     text-align: center;
+    overflow: hidden; /* Garante que nada saia do quadrado */
 }
 
 /* Animação dos nós - Transforma círculos em personagens */
 .node {
     position: absolute;
-    width: 60px; /* Aumenta o tamanho */
-    height: 60px;
+    width: 50px; /* Reduz o tamanho para melhor encaixe */
+    height: 50px;
     background-color: transparent; /* Remove o fundo para usar apenas a imagem/emoji */
     border-radius: 50%;
     opacity: 0;
@@ -721,21 +733,21 @@ body.nivel-conteudo-bg {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px; /* Tamanho do emoji */
+    font-size: 30px; /* Reduz o tamanho do emoji */
     transform: scale(0); /* Começa bem pequeno para o efeito de "pop" */
 }
 
 /* Cores e Emojis para cada nó */
-#node1 { top: 100px; left: 100px; background-color: #FF6B6B; } /* Cor de maçã */
+#node1 { top: 50px; left: 50px; background-color: #FF6B6B; } /* Cor de maçã */
 #node1::after { content: "🍎"; }
 
-#node2 { top: 200px; left: 200px; background-color: #6A5ACD; } /* Cor de uva */
+#node2 { top: 150px; left: 150px; background-color: #6A5ACD; } /* Cor de uva */
 #node2::after { content: "🍇"; }
 
-#node3 { top: 100px; left: 300px; background-color: #3CB371; } /* Cor de folha */
+#node3 { top: 50px; left: 250px; background-color: #3CB371; } /* Cor de folha */
 #node3::after { content: "🍀"; }
 
-#node4 { top: 200px; left: 400px; background-color: #FFC0CB; } /* Cor de coração */
+#node4 { top: 150px; left: 350px; background-color: #FFC0CB; } /* Cor de coração */
 #node4::after { content: "💖"; }
 
 /* Animação das arestas - Deixa a linha com mais vida */
@@ -782,6 +794,49 @@ body.nivel-conteudo-bg {
 .node.active {
     opacity: 1;
     transform: scale(1); /* Volta ao tamanho normal, criando o efeito de "pop" */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .infografico-animado {
+        max-width: 90vw;
+        height: 250px;
+        margin: 20px auto;
+    }
+    
+    .node {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    #node1 { top: 40px; left: 40px; }
+    #node2 { top: 120px; left: 120px; }
+    #node3 { top: 40px; left: 200px; }
+    #node4 { top: 120px; left: 280px; }
+    
+    #iniciar-animacao {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .infografico-animado {
+        max-width: 95vw;
+        height: 220px;
+    }
+    
+    .node {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
+    #node1 { top: 35px; left: 35px; }
+    #node2 { top: 110px; left: 110px; }
+    #node3 { top: 35px; left: 180px; }
+    #node4 { top: 110px; left: 250px; }
 }
 
 /* Estilos para o conteúdo da tela de tipos de grafos */
